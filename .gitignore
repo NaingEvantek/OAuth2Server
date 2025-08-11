@@ -49,3 +49,4 @@ PublishProfiles/
 
 ## Docker
 docker-compose.override.yml
+/appsettings.json
