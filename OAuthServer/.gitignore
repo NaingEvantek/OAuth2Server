@@ -1,0 +1,52 @@
+## Build results
+bin/
+obj/
+out/
+[Bb]uild/
+
+## User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Visual Studio cache/options
+.vs/
+
+## Rider IDE
+.idea/
+
+## Generated files
+*.generated.cs
+
+## Logs
+*.log
+
+## Environment & Secrets
+appsettings.*.json
+secrets.json
+.env
+
+## Package folders
+packages/
+*.nupkg
+*.snupkg
+
+## Backup & temporary files
+*.tmp
+*.bak
+*.swp
+*.dbmdl
+
+## OS files
+.DS_Store
+Thumbs.db
+
+## Azure specific
+PublishProfiles/
+*.publishsettings
+
+## Docker
+docker-compose.override.yml
+/appsettings.json
