@@ -1,4 +1,5 @@
 ﻿using AuthServerNew.Data;
+using Microsoft.EntityFrameworkCore;
 using OpenIddict.Abstractions;
 using static OpenIddict.Abstractions.OpenIddictConstants;
 
@@ -16,8 +17,11 @@ namespace OAuthServer.HostedServices
             using var scope = _serviceProvider.CreateScope();
 
             var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-            await context.Database.EnsureCreatedAsync();
-
+            //await context.Database.EnsureCreatedAsync();
+            // Only run migrations if explicitly allowed
+#if DEBUG
+            await context.Database.MigrateAsync();
+#endif
             var manager = scope.ServiceProvider.GetRequiredService<IOpenIddictApplicationManager>();
 
             if (await manager.FindByClientIdAsync("User") is null)

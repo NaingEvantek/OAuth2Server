@@ -88,13 +88,14 @@ namespace OAuthServer.Controllers
             // Generate Random Name
             var faker = new Faker();
 
-            long unixTimestamp = ((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds();
+            var timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd'T'HH:mm:ss");
             var helper = new Helper();
             var customerProfile = new
             {
+                MsgUID=Guid.NewGuid(),
                 CardNumber = card_number,
-                Branchcode = "0001",
-                Timestamp = unixTimestamp,
+                Branchcode = "0066",
+                Timestamp = timestamp,
                 Salutation = "Mr",
                 Name = faker.Name.FullName(),
                 NRIC = helper.GenerateSingaporeNRIC(),
